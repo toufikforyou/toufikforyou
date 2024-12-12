@@ -21,9 +21,9 @@ I can provide web design, web development, mobile apps and e-commerce services t
 
 Contributions are always welcome!
 
-See `docs/contributing.md` for ways to get started.
+See [contributing](./docs/contributing.md) for ways to get started.
 
-Please adhere to this project's `code of conduct`.
+Please adhere to this project's [Code of Conduct](./docs/CODE_OF_CONDUCT.md).
 
 ## 🛠 Skills
 Kotlin, Jetpack Compose, KMP and more...
