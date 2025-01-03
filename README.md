@@ -1,9 +1,9 @@
 # Hi, I'm MH TOUFIK. 👋
 
-[![](https://visitcount.itsvg.in/api?id=toufikforyou&icon=0&color=0)](https://visitcount.itsvg.in)
+[![Visit Count](https://komarev.com/ghpvc/?username=toufikforyou)](https://github.com/toufikforyou)
 
 ```php
-function codding(){
+function codding() {
   echo "I love codding with me.";
 }
 codding(); // I love codding with me.
@@ -15,8 +15,7 @@ codding(); // I love codding with me.
 
 ## 🚀 About Me
 
-I'm a full stack developer...
-I can provide web design, web development, mobile apps and e-commerce services to your liking. I will always be by your side InshaAllah. Contact me: toufikforyou@gmail.com and website: https://toufikhasan.com
+I'm a full stack developer... I can provide web design, web development, mobile apps and e-commerce services to your liking. I will always be by your side InshaAllah. Contact me: toufikforyou@gmail.com and website: https://toufikhasan.com
 
 ## Contact Me
 
@@ -32,7 +31,7 @@ Please adhere to this project's [Code of Conduct](./docs/CODE_OF_CONDUCT.md).
 
 ## 🛠 Skills
 
-Kotlin, Jetpack Compose, KMP and more...
+Kotlin, Jetpack Compose, KMP, Express api and more...
 
 ![snake gif](https://github.com/toufikforyou/toufikforyou/blob/snake/github-snake-dark.svg)
 
