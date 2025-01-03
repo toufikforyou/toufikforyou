@@ -33,7 +33,12 @@ Please adhere to this project's [Code of Conduct](./docs/CODE_OF_CONDUCT.md).
 
 Kotlin, Jetpack Compose, KMP, Express api and more...
 
-![snake gif](https://github.com/toufikforyou/toufikforyou/blob/snake/github-snake-dark.svg)
+<!-- ![snake gif](https://github.com/toufikforyou/toufikforyou/blob/snake/github-snake-dark.svg) -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/toufikforyou/toufikforyou/snake/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/toufikforyou/toufikforyou/snake/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/toufikforyou/toufikforyou/snake/github-snake.svg" />
+</picture>
 
 <!--- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
