@@ -1,4 +1,4 @@
-name: Contributions Animation Game
+name: Contributions Animation
 
 on:
   workflow_dispatch:
@@ -48,11 +48,12 @@ jobs:
           mv output/light.svg dist/github-snake.svg
           mv output/dark.svg dist/github-snake-dark.svg
 
+      # Step 4: Set commit message with date
       - name: Set commit message with date
         id: msg
         run: echo "msg=Animation updated to $(date '+%Y-%m-%d')" >> $GITHUB_OUTPUT
 
-      # Step 4: Deploy to Output Branch
+      # Step 5: Deploy to Output Branch
       - name: Deploy to Output Branch
         uses: peaceiris/actions-gh-pages@v3
         with:
