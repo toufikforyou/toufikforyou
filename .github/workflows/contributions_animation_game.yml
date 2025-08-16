@@ -1,4 +1,4 @@
-name: GitHub Snake Game
+name: Contributions Animation Game
 
 on:
   workflow_dispatch:
@@ -48,11 +48,15 @@ jobs:
           mv output/light.svg dist/github-snake.svg
           mv output/dark.svg dist/github-snake-dark.svg
 
+      - name: Set commit message with date
+        id: msg
+        run: echo "msg=Animation updated to $(date '+%Y-%m-%d')" >> $GITHUB_OUTPUT
+
       # Step 4: Deploy to Output Branch
       - name: Deploy to Output Branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: snake
-          commit_message: "Snake animation update $(date '+%Y-%m-%d')"
+          publish_branch: animation
+          commit_message: ${{ steps.msg.outputs.msg }}
