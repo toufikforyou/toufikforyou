@@ -17,8 +17,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Step 2: Generate the snake animations
+      # Step 2: Get the day of month
+      - name: Get day of month
+        id: date
+        run: echo "is_even=$([ $(( $(date +%d) % 2 )) -eq 0 ] && echo true || echo false)" >> $GITHUB_OUTPUT
+
+      # Step 3.1: Generate the snake animations
       - name: Generate GitHub Contributions Snake Animations
+        if: ${{ steps.date.outputs.is_even == 'false' }}
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
@@ -29,11 +35,24 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Step 3: Deploy to Output Branch
+      # Step 3.2: Generate the game animation
+      - name: Generate GitHub Contributions Game Animation
+        if: ${{ steps.date.outputs.is_even == 'true' }}
+        uses: cyprieng/github-breakout@v1.0.0
+        with:
+          github_username: ${{ github.repository_owner }}
+
+      - name: Move generated SVGs
+        run: |
+          mkdir -p dist
+          mv output/light.svg dist/github-snake.svg
+          mv output/dark.svg dist/github-snake-dark.svg
+
+      # Step 4: Deploy to Output Branch
       - name: Deploy to Output Branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: snake
-          commit_message: "Snake animation update"
+          commit_message: "Snake animation update $(date '+%Y-%m-%d')"
