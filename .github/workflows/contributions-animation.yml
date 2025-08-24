@@ -43,6 +43,7 @@ jobs:
           github_username: ${{ github.repository_owner }}
 
       - name: Move generated SVGs
+        if: ${{ steps.date.outputs.is_even == 'true' }}
         run: |
           mkdir -p dist
           mv output/light.svg dist/github-snake.svg
