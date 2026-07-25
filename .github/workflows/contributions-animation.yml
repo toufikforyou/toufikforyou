@@ -17,9 +17,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Step 2: Generate the snake animations
+      # Step 2: Get the day of month
+      - name: Get day of month
+        id: date
+        run: echo "is_even=$([ $(( $(date +%d) % 2 )) -eq 0 ] && echo true || echo false)" >> $GITHUB_OUTPUT
+
+      # Step 3: Generate the snake animations on odd days
       - name: Generate GitHub Contributions Snake Animations
         id: snake
+        if: ${{ steps.date.outputs.is_even == 'false' }}
         continue-on-error: true
         uses: Platane/snk@v3
         with:
@@ -31,26 +37,26 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Step 3: Fallback to breakout when snake generation fails
+      # Step 4: Generate breakout on even days or snake failure on odd days
       - name: Generate GitHub Contributions Game Animation
-        if: ${{ steps.snake.outcome != 'success' }}
+        if: ${{ steps.date.outputs.is_even == 'true' || (steps.date.outputs.is_even == 'false' && steps.snake.outcome != 'success') }}
         uses: cyprieng/github-breakout@v1.0.0
         with:
           github_username: ${{ github.repository_owner }}
 
       - name: Move generated SVGs
-        if: ${{ steps.snake.outcome != 'success' }}
+        if: ${{ steps.date.outputs.is_even == 'true' || (steps.date.outputs.is_even == 'false' && steps.snake.outcome != 'success') }}
         run: |
           mkdir -p dist
           mv output/light.svg dist/github-snake.svg
           mv output/dark.svg dist/github-snake-dark.svg
 
-      # Step 4: Set commit message with date
+      # Step 5: Set commit message with date
       - name: Set commit message with date
         id: msg
         run: echo "msg=Animation updated to $(date '+%Y-%m-%d')" >> $GITHUB_OUTPUT
 
-      # Step 5: Deploy to Output Branch
+      # Step 6: Deploy to Output Branch
       - name: Deploy to Output Branch
         uses: peaceiris/actions-gh-pages@v3
         with:
