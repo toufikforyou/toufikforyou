@@ -20,7 +20,7 @@ jobs:
       # Step 2: Get the day of month
       - name: Get day of month
         id: date
-        run: echo "is_even=$([ $(( $(date +%d) % 2 )) -eq 0 ] && echo true || echo false)" >> $GITHUB_OUTPUT
+        run: echo "is_even=$([ $(( 10#$(date +%d) % 2 )) -eq 0 ] && echo true || echo false)" >> $GITHUB_OUTPUT
 
       # Step 3: Generate the snake animations on odd days
       - name: Generate GitHub Contributions Snake Animations
