@@ -1,4 +1,4 @@
-# Hi there, I'm Toufik! 👋
+# Hi there, I'm MH TOUFIK (Muhammad Toufik Hasan)! 👋
 
 [![Visit Count](https://komarev.com/ghpvc/?username=toufikforyou)](https://github.com/toufikforyou)
 
@@ -19,7 +19,7 @@ codding(); // I love codding with me.
 
 ## 🚀 About Me
 
-I'm a passionate developer who loves to work on exciting projects and contribute to the open-source community. I enjoy learning new technologies and continuously improving my skills. I can provide web design, web development, mobile apps and e-commerce services to your liking. I will always be by your side InshaAllah. Contact me: toufikforyou@gmail.com and website: https://toufikhasan.com
+I'm a passionate developer who loves to work on exciting projects and contribute to the open-source community. I enjoy learning new technologies and continuously improving my skills. I can provide web design, web development, mobile apps and e-commerce services to your liking. I will always be by your side InshaAllah. Contact me: toufikforyou@gmail.com and website: https://toufik.dev
 
 - 🌱 I’m currently learning and exploring new technologies in the field of software development.
 - 💼 I'm looking to collaborate on interesting projects where I can contribute and learn.
